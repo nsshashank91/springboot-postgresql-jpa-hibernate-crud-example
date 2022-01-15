@@ -15,15 +15,17 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private String emailId;
+	private Long phone;
 	
 	public Employee() {
 		
 	}
 	
-	public Employee(String firstName, String lastName, String emailId) {
+	public Employee(String firstName, String lastName, String emailId, Long phone) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.emailId = emailId;
+		this.phone = phone;
 	}
 	
 	@Id
@@ -59,10 +61,23 @@ public class Employee {
 		this.emailId = emailId;
 	}
 
+	@Column(name = "phone")
+	public Long getPhone() {
+		return phone;
+	}
+
+	public void setPhone(Long phone) {
+		this.phone = phone;
+	}
+
 	@Override
 	public String toString() {
-		return "Employee [id=" + id + ", firstName=" + firstName + ", lastName=" + lastName + ", emailId=" + emailId
-				+ "]";
+		return "Employee{" +
+				"id=" + id +
+				", firstName='" + firstName + '\'' +
+				", lastName='" + lastName + '\'' +
+				", emailId='" + emailId + '\'' +
+				", phone='" + phone + '\'' +
+				'}';
 	}
-	
 }
